@@ -22,4 +22,8 @@ file path of our files in the directory
  <u>package.json</u> 
 
  # The <u>package.json</u> file contains descriptive and functional <u>metadata</u> about a project, such as a name, version and dependencies
- command - <u>npm init </u>
+ command - <u>npm init </u> command is used to initialize our own package
+ npm i -g "package name " -  command is used to install a package globally
+ npm link "package name " - command is used to link the current directory with the global directory to share the info inside packages from one place to another place.
+
+ # Important note - If we are using import and export features in our project then we have to add a key:value pair named as [type:"module"] in the <u>SAME</u> directory.
