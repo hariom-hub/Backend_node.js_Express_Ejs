@@ -111,3 +111,27 @@ app.get('/search',(req,res)=>{
     console.log(search);
     res.send(req.query);
 })
+
+# EJS(EMBEDDED JAVASCRIPT TEMPLATES)
+
+EJS is a simple templating language that let's you generate HTML markup with plane Javascript.
+Note - Express already requires ejs so there is no need to require the ejs again.
+View package is used to show or render the templates.
+Inorder to render the templates, express by default looks for a " views " folder in ejs directory.All the templates will be present there in the views folder.
+If we want to render ejs file from the root directory which is the parent directory of our ejs folder which contains views folder then we have to write 
+
+const path = require("path");
+
+# Important EJS tags
+
+Tags
+
+<% 'Scriptlet' tag, for control-flow, no output
+<%_ ‘Whitespace Slurping’ Scriptlet tag, strips all whitespace before it
+<%= Outputs the value into the template (HTML escaped)
+<%- Outputs the unescaped value into the template
+<%# Comment tag, no execution, no output
+<%% Outputs a literal '<%'
+%> Plain ending tag
+-%> Trim-mode ('newline slurp') tag, trims following newline
+_%> ‘Whitespace Slurping’ ending tag, removes all whitespace after it
