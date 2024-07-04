@@ -69,4 +69,19 @@ app.listen(port,()=>{
 })
 
 
+* Sendig responses
+
+ app.use((req,res)=>{
+    console.log("response received");
+})
+
+# Nodemon - "Automatically restarts the server and refreshes the edited code."
+
+installation command - npm i nodemon
+
+Syntax : nodemon file.js
+
+
+
+
 
