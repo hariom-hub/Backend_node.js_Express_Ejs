@@ -3,6 +3,8 @@ const app = express();
 const port = 5050;
 const path = require("path");
 
+
+
 app.set("views engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 
@@ -23,16 +25,35 @@ app.get('/html', (req, res) => {
 
 app.get('/dice', (req, res) => {
 
-    let number = Math.floor(Math.random() * 6) + 1;
+    let number = Math.floor(Math.random() * 50) + 1;
 
     res.render("rollDice.ejs", { number });
 })
 
 //instagram templating
 
-app.get('/ig/:username/:age', (req, res) => {
+// app.get('/ug/:username/:age', (req, res) => {
 
-    let { username , age } = req.params;
-    console.log({username,age});
-    res.render("userInsta.ejs", { username ,age  });
+//     let followers = Math.floor(Math.random()*10)+1;
+
+//     let { username,age } = req.params;
+//     console.log({username,age});
+//     res.render("userInsta.ejs", { username ,age,followers});
+// })
+
+
+//cats and dog api templating 
+
+
+
+app.get('/ig/:username', (req, res) => {
+
+    let { username } = req.params;
+    const InstaJsonData = require("./data.json");
+    const data = InstaJsonData[username];
+    console.log(data);
+    
+    res.render("instaPost.ejs",{data});
+
+
 })

@@ -1,12 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usergram</title>
 </head>
+
 <body>
-    <h1>This is the profile for the user named <u><%=username%></u></h1>
-    <h1>Age is <%= age %></h1>
+    <h1 style="text-align: center;">Welcome to Usergram</h1>
+    <h3>This is the profile for the user named <u>@<%=username%></u></h3>
+    <h3>His/Her age is <%= age %>
+    </h3>
+
+    <h4>
+        <% if(age>= 18){ %>
+            <h4>Adult</h4>
+            <% }else{ %>
+                <h4>Not an adult </h4>
+                <% } %>
+    </h4>
+    
+    <button>Follow</button>
+    <button>Message</button>
+    <button>Give him/her a &hearts;</button>
+    <p>Followers = <%= followers %></p>
+
+    <p>Ratings=
+        <% for(let i=0;i<followers;i++){ %>
+            <p>&star;</p>
+            <% } %>
+    </p>
+
+    <p> 
+        <% if(followers >= 100000){ %>
+            <p>Verified &star;</p>
+            <% }else{ %>
+                <p>Unverified!</p>
+                <% } %>
+    </p>
 </body>
+
 </html>
