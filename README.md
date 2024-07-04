@@ -2,7 +2,7 @@
 My backend journey..........
 # let's start again 🔥🔥🔥🔥
 
-learnings from day 1 : 
+Learnings from day 1 : 
 
 executable path for node.js
 # 'C:\\Program Files\\nodejs\\node.exe',
@@ -27,3 +27,43 @@ file path of our files in the directory
  npm link "package name " - command is used to link the current directory with the global directory to share the info inside packages from one place to another place.
 
  # Important note - If we are using import and export features in our project then we have to add a key:value pair named as [type:"module"] in the <u>SAME</u> directory.
+
+
+Learnings from day : 2
+
+ # EXPRESS.JS
+ A node.js  web application framework that helps us to make web applications.
+ It is used in server side programmming.
+
+ Main features:
+ 1. Listen for the incoming requests.
+ 2. Parse (Node.js)
+ 3. Match response with routes. example - https:\\hariom.com\info
+ 4. Sending Suitable Response.
+
+ 
+![request and response](1_CdUUublTxuAyIcnTFlxSUg.png)
+
+* defining a port 
+const port = 8080
+
+* requiring express
+
+const express = require("express");
+
+* listening to requests using routes ('/')
+
+app.get('/hello',(req,res)=>{
+
+    res.send("hello world");
+})
+
+* Listening to the server using the port defined.
+
+app.listen(port,()=>{
+
+    console.log("server is running on the port",port);
+})
+
+
+
