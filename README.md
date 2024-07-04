@@ -47,6 +47,9 @@ Learnings from day : 2
 * defining a port 
 const port = 8080
 
+/* ports are the logical endpoints of a network connection that is used to exchange information between a web server and a web client.*\
+
+
 * requiring express
 
 const express = require("express");
