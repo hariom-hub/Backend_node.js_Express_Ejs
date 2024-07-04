@@ -1,11 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Usergram</title>
-</head>
+
 
 <body>
     <h1 style="text-align: center;">Welcome to Usergram</h1>
@@ -26,12 +21,6 @@
     <button>Give him/her a &hearts;</button>
     <p>Followers = <%= followers %></p>
 
-    <p>Ratings=
-        <% for(let i=0;i<followers;i++){ %>
-            <p>&star;</p>
-            <% } %>
-    </p>
-
     <p> 
         <% if(followers >= 100000){ %>
             <p>Verified &star;</p>
@@ -39,6 +28,7 @@
                 <p>Unverified!</p>
                 <% } %>
     </p>
+    <%- include("includes/head.ejs") %>
 </body>
 
 </html>

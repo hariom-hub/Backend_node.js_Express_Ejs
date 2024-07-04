@@ -32,16 +32,16 @@ app.get('/dice', (req, res) => {
     res.render("rollDice.ejs", { number });
 })
 
-//instagram templating
+// instagram templating
 
-// app.get('/ug/:username/:age', (req, res) => {
+app.get('/ug/:username/:age', (req, res) => {
 
-//     let followers = Math.floor(Math.random()*10)+1;
+    let followers = Math.floor(Math.random()*120000)+1;
 
-//     let { username,age } = req.params;
-//     console.log({username,age});
-//     res.render("userInsta.ejs", { username ,age,followers});
-// })
+    let { username,age } = req.params;
+    console.log({username,age});
+    res.render("userInsta.ejs", { username ,age,followers});
+})
 
 
 //cats and dog api templating 
