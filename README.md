@@ -81,7 +81,33 @@ installation command - npm i nodemon
 
 Syntax : nodemon file.js
 
+# Path Parameters
 
+Path parameters are the variables that acts as a path varible used to reach a particular path. 
 
+syntax 
 
+app.get('/:username/:age',(req,res)=>{
 
+    let {username,age} = req.params;
+
+    //req.params means the parameters that are passed in the path and it is returned as an object.
+
+    let userPage = (`this is a page for ${username} and age : ${age}`);
+    res.send(userPage);
+    console.log(userPage);
+
+})
+
+# Query Strings
+
+Query strings are the additional information passed in the path which is stored in the "req" object of app.get() .
+
+Syntax 
+
+app.get('/search',(req,res)=>{
+
+    let  {search} = req.query;
+    console.log(search);
+    res.send(req.query);
+})
