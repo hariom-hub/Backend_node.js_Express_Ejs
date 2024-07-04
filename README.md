@@ -135,3 +135,21 @@ Tags
 %> Plain ending tag
 -%> Trim-mode ('newline slurp') tag, trims following newline
 _%> ‘Whitespace Slurping’ ending tag, removes all whitespace after it
+
+# Serving static files
+
+If we want to add extra css and js in our code then we can create a public folder where we can store our files and use the public folder using the given syntax :
+
+app.use(express.static(path.join(__dirname,"/public")))
+
+# Includes
+
+Includes are relative to the template with the include call. (This requires the 'filename' option.) For example if you have "./views/users.ejs" and "./views/user/show.ejs" you would use <%- include('user/show'); %>.
+
+You'll likely want to use the raw output tag (<%-) with your include to avoid double-escaping the HTML output.
+
+<ul>
+  <% users.forEach(function(user){ %>
+    <%- include('user/show', {user: user}); %>
+  <% }); %>
+</ul>

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 
 <body>
@@ -18,13 +19,14 @@
 
     <% for(let post of data.posts){%>
 
-        <img style="height: 200px;width: 200px;" src="<%= post.image%>" alt="some img" >
+        <img src="<%= post.image%>" alt="some img">
         <p>
 
             Likes : <%= post.likes %> &nbsp; &nbsp;
-            Comments : <%= post.comments %>
+                Comments : <%= post.comments %>
         </p>
         <% } %>
+        <script src="/jsFolder/logic.js"></script>
 </body>
 
 </html>

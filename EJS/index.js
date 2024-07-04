@@ -7,6 +7,8 @@ const path = require("path");
 
 app.set("views engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
+app.use(express.static(path.join(__dirname,"/public")));
+app.use(express.static(path.join(__dirname,"/public/jsfolder")))
 
 app.listen(port, () => {
 
@@ -52,8 +54,13 @@ app.get('/ig/:username', (req, res) => {
     const InstaJsonData = require("./data.json");
     const data = InstaJsonData[username];
     console.log(data);
-    
-    res.render("instaPost.ejs",{data});
+    if (data) {
+        res.render("instaPost.ejs", { data });
+    } else {
+        res.sendStatus(404);
+    }
+
+
 
 
 })
