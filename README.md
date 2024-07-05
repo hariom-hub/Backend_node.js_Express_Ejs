@@ -208,3 +208,8 @@ arr._proto_(reference)
 Array.prototype(actual object)
 String.prototype
 
+OOPS IN JAVASCRIPT
+
+# REST (Representational state transfer) (important topic)
+
+REST  is an architectural style that defines a set of constraints to be used for creating web services.
