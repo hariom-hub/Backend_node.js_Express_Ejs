@@ -156,3 +156,55 @@ You'll likely want to use the raw output tag (<%-) with your include to avoid do
     <%- include('user/show', {user: user}); %>
   <% }); %>
 </ul>
+
+#Learnings of the day 3
+
+
+# GET AND POST REQUEST
+
+*GET
+
+=> used to get some responses
+=>data sent in query strings (limited,string data & visible in URL)
+
+*POST
+
+=> Used to POST something (for create/Write/Update)
+=> Data sent via request body (any type of data)
+
+#FORM METHODS
+=> get
+=> post
+
+
+# Handling Post requests
+
+~ set up post request route to get some responses 
+~ parse post request data
+
+Syntax
+
+//if express is receiving an urlencoded data then it will automatically understand the format of that data by writing the below line
+
+app.use(express.urlencoded({extended:true}));
+app.use(express.json());
+
+
+# Object oriented programming in javascript
+
+To structure your code
+
+<li>prototypes</li>
+<li>new operator</li>
+<li>constructors</li>
+<li>classes</li>
+<li>keywords(extends,super)</li>
+
+# Object Prototypes
+
+Prototypes are the mechanism by which Javascript objects inherit features from one another. It is like a single template object that all object inherit methods and properties from without having their own copy. 
+
+arr._proto_(reference)
+Array.prototype(actual object)
+String.prototype
+
