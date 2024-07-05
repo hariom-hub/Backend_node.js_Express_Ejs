@@ -207,6 +207,7 @@ Prototypes are the mechanism by which Javascript objects inherit features from o
 arr._proto_(reference)
 Array.prototype(actual object)
 String.prototype
+[JS OOPS 11 (Qs).pdf](https://github.com/user-attachments/files/16110419/JS.OOPS.11.Qs.pdf)
 
 OOPS IN JAVASCRIPT
 
