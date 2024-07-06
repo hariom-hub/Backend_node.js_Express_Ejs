@@ -44,12 +44,12 @@ let posts = [
 
 app.get('/', (req, res) => {
 
-    res.send("You are in the root path 🤬bhosideke");
+    res.send("You are in the root path ");
 });
 
 app.get('/posts', (req, res) => {
 
-    res.render("index.ejs", { posts }); 
+    res.render("index.ejs", { posts });
 });
 
 app.get('/posts/new', (req, res) => {
@@ -59,10 +59,12 @@ app.get('/posts/new', (req, res) => {
 
 app.post('/posts', (req, res) => {
 
-    console.log(req.body);
+    // console.log(req.body);
+
+    let id = uuidv4();
     let { username, content } = req.body;
-    posts.push({ username, content });
-    // res.send("post request working");
+    //yeah now it is working correctly
+    posts.push({ id, username, content });
     res.redirect('/posts');
 
 });
@@ -71,18 +73,20 @@ app.post('/posts', (req, res) => {
 app.get('/posts/:id', (req, res) => {
 
     let { id } = req.params;
-    console.log(`${id}`);
+    console.log(id);
+    let post = posts.find((p) => id === p.id);
+    if (post.id) {
+        res.render("search.ejs", { post });
+    } else {
+        res.sendStatus(404);
+    }
 
-    let findPost = posts.find((p) => id === p.id.toString());
-    
-    console.log(findPost);
-    res.render("search.ejs", { findPost });
 
-})
+    console.log(post);
 
+});
 
 app.listen(port, () => {
 
     console.log("server is listening to the port : ", port);
-})
-
+});

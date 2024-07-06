@@ -4,13 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Post in detail</title>
+    <link rel="stylesheet" href="/REST/public/search.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+        }
+        body{
+            background-color: grey;
+        }
+    </style>
 </head>
 <body>
     <h1>Here is your post data in detail.</h1>
-    <p>Your id : <%= findPost.id %></p>
-    <h3>Your name : @<%= findPost.username %></h3>
-    <h4>Your content : <%= findPost.content %> </h4>
-
-
+    <br>
+    <hr>
+    <p>Post id : <%= post.id %></p>
+    <div class="post">
+        <h3 class="user">@<%= post.username %></h3>
+        <h4><%= post.content %></h4><br>
+    </div>
+    <hr>
 </body>
 </html>
