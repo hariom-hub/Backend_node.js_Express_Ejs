@@ -1,7 +1,9 @@
 const express = require("express");
 const app = express();
 const port = 2020;
+
 const path = require("path");
+const { v4: uuidv4 } = require('uuid');
 
 app.set("views engine");
 app.set("views", path.join(__dirname, "views"));
@@ -14,7 +16,7 @@ app.use(express.json());
 let posts = [
     {
         username: "hariom",
-        id: "h1",
+        id: uuidv4(),
         age: 20,
         height: 5.75,
         profession: "B.TECH CSE student",
@@ -22,7 +24,7 @@ let posts = [
     },
     {
         username: "ritansh",
-        id: "r1",
+        id: uuidv4(),
         age: 20,
         height: 5.7,
         profession: "B.TECH CSE(AI & DS) student",
@@ -31,7 +33,7 @@ let posts = [
     {
 
         username: "ayush",
-        id: "a1",
+        id: uuidv4(),
         age: 20,
         height: 5.7,
         profession: "B.SC (PCM) student",
@@ -47,15 +49,15 @@ app.get('/', (req, res) => {
 
 app.get('/posts', (req, res) => {
 
-    res.render("index.ejs", { posts });
+    res.render("index.ejs", { posts }); 
 });
 
-app.get('/post/new', (req, res) => {
+app.get('/posts/new', (req, res) => {
 
     res.render("form.ejs")
 })
 
-app.post('/post', (req, res) => {
+app.post('/posts', (req, res) => {
 
     console.log(req.body);
     let { username, content } = req.body;
@@ -66,19 +68,15 @@ app.post('/post', (req, res) => {
 });
 
 
-app.get('/posts/:id',(req,res)=>{
+app.get('/posts/:id', (req, res) => {
 
-    let {id} = req.params;
+    let { id } = req.params;
     console.log(`${id}`);
 
-    let findPost = posts.find((p)=>id == p.id);
-    if(findPost){
-        console.log(findPost);
-        res.render("search.ejs",{findPost});
-    }else{
-        res.sendStatus(404);
-    }
-   
+    let findPost = posts.find((p) => id === p.id.toString());
+    
+    console.log(findPost);
+    res.render("search.ejs", { findPost });
 
 })
 
