@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Posts</title>
+</head>
+<body>
+    <h1>Quora Posts</h1>
+    <p>
+        <% for(let post of posts){ %>
+            <div>
+                <hr>
+                <h3>Username@<%=post.name%></h3>
+                <h5>Age : <%= post.age %></h5>
+                <h5>Height : <%= post.height %></h5>
+                <h5>Profession : <%= post.profession %></h5>
+            </div>
+            <% } %>
+    </p>
+</body>
+</html>

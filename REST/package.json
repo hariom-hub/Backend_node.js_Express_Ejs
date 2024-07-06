@@ -1,0 +1,18 @@
+{
+  "name": "rest",
+  "version": "1.0.0",
+  "description": "Let's start with RESTFUL API'S",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "HEY"
+  ],
+  "author": "HARIOM SINGH THAKUR 😎",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2"
+  }
+}
