@@ -4,19 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>All Posts</title>
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
     <h1>Quora Posts</h1>
-    <p>
         <% for(let post of posts){ %>
-            <div>
+            <div class="content">
                 <hr>
-                <h3>Username@<%=post.name%></h3>
+                <h3 class="user">Username@<%=post.username%></h3>
                 <h5>Age : <%= post.age %></h5>
                 <h5>Height : <%= post.height %></h5>
                 <h5>Profession : <%= post.profession %></h5>
+                <h2>Content : <%= post.content %></h2>
+                <button><a href="http://localhost:2020/posts/<%= post.id%>">See in detail</a></button>
             </div>
             <% } %>
-    </p>
+            <hr><br>
+            <button><a href="http://localhost:2020/post/new">Create new post</a></button>
 </body>
 </html>

@@ -221,3 +221,8 @@ CRUD OPERATIONS
 CREATING RESTFUL API'S
 EXAMPLE - QUORA POST
 
+res.redirect(url)
+=> redirects from a currect page,form etc to the entered path in GET response.
+
+### UUID package ###
+There is  package in express which is used to generate universally unique id's when we are implementing functionalities like adding accounts, payment receipts, course id, meetings id and etc. 
