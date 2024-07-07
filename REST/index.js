@@ -80,11 +80,16 @@ app.get('/posts/:id', (req, res) => {
     } else {
         res.sendStatus(404);
     }
-
-
     console.log(post);
 
 });
+
+app.patch('/posts/:id', (req, res) => {
+
+    let { id } = req.params;
+    res.send(`entered id is : ${id}`);
+    console.log(id);
+})
 
 app.listen(port, () => {
 
