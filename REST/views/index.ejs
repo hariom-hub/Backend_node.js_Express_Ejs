@@ -17,6 +17,10 @@
                 <h5>Profession : <%= post.profession %></h5>
                 <h2>Content : <%= post.content %></h2>  
                 <button><a href="http://localhost:2020/posts/<%= post.id%>">See in detail</a></button>
+                <button><a href="http://localhost:2020/posts/<%= post.id%>/edit">Edit </a></button>
+                <form method="post" action='/posts/<%=post.id%>?_method=DELETE'>
+                    <button>Delete</button>
+                </form>
             </div>
             <% } %>
             <hr><br>

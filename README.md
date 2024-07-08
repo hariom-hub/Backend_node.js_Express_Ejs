@@ -235,3 +235,28 @@ app.patch('/posts/:id',(req,res)=>{
 }))
 
 app.patch() method uses two parameters like a key:value pair in which in the request parameter where we have to specify the key data which is present in our code and then we can update the content inside that particular parameter but that parameter entered should match the parameter value in our dataset.
+
+
+# html forms only supports get and post requests that why inorder to user put,patch,delete etc. we have to install a npm package 
+
+command to install that package 
+
+
+
+npm i method-override
+
+
+Override using a query value
+To use a query string value to override the method, specify the query string key as a string argument to the methodOverride function. To then make the call, send a POST request to a URL with the overridden method as the value of that query string key. This method of using a query value would typically be used in conjunction with plain HTML <form> elements when trying to support legacy browsers but still use newer methods.
+
+var express = require('express')
+var methodOverride = require('method-override')
+var app = express()
+ 
+// override with POST having ?_method=DELETE
+app.use(methodOverride('_method'))
+Example call with query override using HTML <form>:
+
+<form method="POST" action="/resource?_method=DELETE">
+  <button type="submit">Delete resource</button>
+</form>

@@ -6,6 +6,9 @@ const port = 2020;
 const path = require("path");
 const { v4: uuidv4 } = require('uuid');
 
+const methodOverride = require("method-override");
+
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 
@@ -13,6 +16,8 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+app.use(methodOverride("_method"));
 
 let posts = [
     {
@@ -86,31 +91,54 @@ app.post('/posts', (req, res) => {
 
 app.patch("/posts/:uid", (req, res) => {
     let { uid } = req.params;
-    console.log(uid);
+    // console.log(uid);
 
 
     let newContent = req.body.content;
-    console.log("updated content");
-    console.log(newContent);
+
 
     let post = posts.find((p) => uid == p.id);
     console.log("previous content");
     console.log(post.content);
+    post.content = newContent;
+    console.log("updated content");
+    console.log(newContent);
+    res.redirect('/posts');
 
-    if (post) {
-        post.content = newContent;
-        console.log(post);
-        res.sendStatus(200);
-    } else {
-        console.log("Post not found");
-        res.status(404).send("Post not found");
-    }
+    // if (post) {
+    //     post.content = newContent;
+    //     console.log(post);
+    //     res.sendStatus(200);
+    // } else {
+    //     console.log("Post not found");
+    //     res.status(404).send("Post not found");
+    // }
 });
 
 
+app.get('/posts/:id/edit', (req, res) => {
+
+    let { id } = req.params;
+    let post = posts.find((p) => id === p.id);
+    res.render("edit.ejs", { post });
+})
+
+//DELETING CONTENT IN OUR PAGE
+
+
+app.delete('/posts/:id', (req, res) => {
+
+    let {id} = req.params;
+    posts = posts.filter((p)=>id !== p.id);
+    res.redirect('/posts');
+})
 
 //listening to the requsts using the virtual port
 
 app.listen(port, () => {
     console.log("Server is listening on port:", port);
 });
+
+//the above line will filter those posts which are not equal to the id passed as a parameter and if  the id which matches the parameterized id will be,
+
+//responsible for the deletion of that particular post.
