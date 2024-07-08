@@ -226,3 +226,12 @@ res.redirect(url)
 
 ### UUID package ###
 There is  package in express which is used to generate universally unique id's when we are implementing functionalities like adding accounts, payment receipts, course id, meetings id and etc. 
+
+
+# app.patch() - method is used to update data in a path.
+
+app.patch('/posts/:id',(req,res)=>{
+
+}))
+
+app.patch() method uses two parameters like a key:value pair in which in the request parameter where we have to specify the key data which is present in our code and then we can update the content inside that particular parameter but that parameter entered should match the parameter value in our dataset.
